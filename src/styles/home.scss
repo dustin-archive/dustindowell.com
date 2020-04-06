@@ -1,0 +1,141 @@
+
+$art1-fg: #fe44a2;
+$art2-fg: #9dc6db;
+$art3-fg: #fce685;
+$art4-fg: #b0e7e3;
+$bg: #212c3b;
+
+%button {
+  padding: 12px 24px;
+  transition: transform 0.125s;
+  border-radius: 4px;
+  font: 600 1em/1.25 $font-inter;
+
+  &:hover {
+    transform: translate(0, -6px);
+  }
+}
+
+.nav {
+  display: flex;
+  position: absolute;
+  bottom: 0 - (44px + 24px);
+  width: 100%;
+  padding: 0 24px;
+
+  div {
+    @extend %button;
+    color: $bg;
+    background: $white;
+    cursor: pointer;
+    user-select: none;
+
+    &:first-child {
+      margin: 0 12px 0 auto;
+    }
+  }
+}
+
+.art {
+  position: absolute;
+  top: -10%;
+  width: 100%;
+  height: 110%;
+  background-position: bottom right 48px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+}
+
+.info {
+  margin: auto 0;
+  padding: 0 0 0 96px;
+  color: $bg;
+
+  ul {
+    display: flex;
+    padding: 24px 0 0;
+    font: 600 1em/1.25 $font-inter;
+  }
+
+  a {
+    @extend %button;
+    color: $white;
+    background: $bg;
+
+    + a {
+      margin: 0 0 0 12px;
+    }
+  }
+
+  h1 {
+    font: 600 64px/1.5 $font-inter;
+  }
+
+  h2 {
+    font: 400 36px/1 $font-inter;
+  }
+}
+
+.card {
+  display: flex;
+  width: 1200px;
+  height: 800px;
+  margin: auto;
+  transition-duration: 0.5s;
+  transition-property: background-color;
+  border-radius: 12px;
+  background-blend-mode: multiply;
+}
+
+.home {
+  display: flex;
+  height: 100vh;
+
+  &.-theme-1 {
+    .art {
+      background-image: url('art/1.png');
+    }
+
+    .info {
+      color: $white;
+    }
+
+    .card {
+      background-color: $art1-fg;
+    }
+  }
+
+  &.-theme-2 {
+    .art {
+      background-image: url('art/2.png');
+    }
+
+    .card {
+      background-color: $art2-fg;
+    }
+  }
+
+  &.-theme-3 {
+    .art {
+      background-image: url('art/3.png');
+    }
+
+    .card {
+      background-color: $art3-fg;
+    }
+  }
+
+  &.-theme-4 {
+    .art {
+      background-image: url('art/4.png');
+    }
+
+    .card {
+      background-color: $art4-fg;
+    }
+  }
+}
+
+body {
+  background: $bg;
+}

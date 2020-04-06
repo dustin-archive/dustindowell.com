@@ -1,0 +1,88 @@
+
+// =============================================================================
+// + Colors
+// =============================================================================
+
+$white: #fff;
+$black: #000;
+
+// =============================================================================
+// + Icons
+// =============================================================================
+
+$attrs: 'xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"';
+
+@function hex($hex) {
+  @return '%23' + str-slice($hex + '', 2);
+}
+
+@function svg($paths) {
+  @return 'data:image/svg+xml;charset=utf8,<svg #{$attrs}>#{$paths}</svg>';
+}
+
+@function icon-menu($color) {
+  @return svg('<path fill="#{hex($color)}" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>');
+}
+
+// =============================================================================
+// + Fonts
+// =============================================================================
+
+$font-inter: Inter, '-apple-system', BlinkMacSystemFont, sans-serif;
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('fonts/Inter-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style:  normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('fonts/Inter-SemiBold.woff2') format('woff2');
+}
+
+// =============================================================================
+// + Reset
+// =============================================================================
+// 1. NOTE: Webkit iOS: enable momentum scrolling on overflow elements
+// 2. NOTE: Prevent tap delay on touch devices
+// 3. NOTE: Prevent mobile devices from scaling font size
+// 4. HACK: Safari: `position: fixed` sets `font-smoothing` to `antialiased`
+
+* {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  -webkit-overflow-scrolling: touch; // 1
+}
+
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+html {
+  touch-action: manipulation; // 2
+  -webkit-text-size-adjust: none; // 3
+}
+
+body {
+  font: 400 1em/1 $font-inter;
+  -webkit-font-smoothing: subpixel-antialiased; // 4
+  box-sizing: border-box;
+}
+
+//
+// # App
+// =============================================================================
+
+@import 'styles/home';

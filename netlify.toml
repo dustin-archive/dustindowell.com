@@ -1,0 +1,14 @@
+
+[build]
+  command = 'make'
+  publish = 'public'
+
+[[redirects]]
+  from = '/*'
+  to = '/index.html'
+  status = 200
+
+[[redirects]]
+  from = 'http://dustindowell.netlify.com/*'
+  to = 'http://dustindowell.com/:splat'
+  status = 301
