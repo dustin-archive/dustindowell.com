@@ -22,7 +22,7 @@ prep:
 	rm -rf public && mkdir public
 	rm -rf tmp && mkdir tmp
 	cp -r src/assets/* public
-	node collect
+	# node collect
 
 css:
 	node-sass src/app.scss -o public --source-map true --source-map-contents
