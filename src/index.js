@@ -32,10 +32,10 @@ const render = data => {
       link({ rel: 'icon', type: 'image/png', href: '/favicon.png' }),
       // script({ async: true, src: 'https://www.googletagmanager.com/gtag/js' }),
       script({ innerHTML: data.structured, type: 'application/ld+json' }),
-      Sources(data),
       body([
         div({ id: 'app' })
-      ])
+      ]),
+      Sources(data)
     ])
   ])
 }
