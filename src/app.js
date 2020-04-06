@@ -1,7 +1,7 @@
 
 import './automaticReload'
 
-import { gtagConfig } from './gtag'
+// import { gtagConfig } from './gtag'
 import { dispatch, getState } from './pocket'
 import { pages } from './routes'
 
@@ -18,7 +18,7 @@ const routeHandler = () => {
     routeObject.init()
   })
 
-  gtagConfig()
+  // gtagConfig()
 }
 
 listen('DOMContentLoaded', () => {
